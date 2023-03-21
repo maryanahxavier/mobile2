@@ -1,10 +1,11 @@
-import {View} from 'react-native';
+import {FlatList} from 'react-native';
 import {Ipage} from '../../App';
 
 import {
     ComponetButtonSlider,ComponentTitleSlider
 } from '../../components';
-import funtion Slider1({setPageI}: Ipage) {
+import {style} from './style';
+export function Slider1({setPageI}:Ipage) {
     const slider1 = require("../../assets/mid.png")
     const slider1 = require("../../assets/duda.png")
     const slider1 = require("../../assets/luana.png")
@@ -20,6 +21,11 @@ import funtion Slider1({setPageI}: Ipage) {
         {id: '9', text: 'por R$290,00'},
 ]
  return(
+    <ImageBackground source= {slider1} style={style.container} >
+        <View style={slider.panel}>
+            
+        </View>
+    </ImageBackground>
     
  )
 
