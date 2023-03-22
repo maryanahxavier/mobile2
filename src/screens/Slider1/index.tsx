@@ -7,8 +7,8 @@ import {
 import {style} from './style';
 export function Slider1({setPageI}:Ipage) {
     const slider1 = require("../../assets/mid.png")
-    const slider1 = require("../../assets/duda.png")
-    const slider1 = require("../../assets/luana.png")
+    const lider1 = require("../../assets/duda.png")
+    const Slider1 = require("../../assets/luana.png")
     const slider1Text = [
         {id: '1', text: 'Conjunto Mid Verão'},
         {id: '2', text: 'de  R$158,00 '},
@@ -23,10 +23,22 @@ export function Slider1({setPageI}:Ipage) {
  return(
     <ImageBackground source= {slider1} style={style.container} >
         <View style={slider.panel}>
-            
-        </View>
+            <ComponentTitleSlider titleI= "MARY's BOTIQUE" />
+            <FlatList
+             data={slider1Texts}
+             renderItem={({item}) =>
+             <ComponentTitleSlider textMaker={item.text} />
+ }
+      />  </View>
+      <View style={styles.ButtonSlider}>
+      <ComponentTitleSlider onPressI={() => setPageI(1)} />
+      <ComponentTitleSlider onPressI={() => setPageI(2)} />
+      <ComponentTitleSlider onPressI={() => setPageI(3)} />
+      <ComponentTitleSlider onPressI={() => setPageI(4)} />
+      </View>
+
     </ImageBackground>
     
- )
+ );
 
 }
