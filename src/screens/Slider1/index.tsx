@@ -31,10 +31,10 @@ export function Slider1({setPageI}:Ipage) {
  }
       />  </View>
       <View style={styles.ButtonSlider}>
-      <ComponentTitleSlider onPressI={() => setPageI(1)} />
-      <ComponentTitleSlider onPressI={() => setPageI(2)} />
-      <ComponentTitleSlider onPressI={() => setPageI(3)} />
-      <ComponentTitleSlider onPressI={() => setPageI(4)} />
+      <ComponentTitleSlider texto='Ofertas'onPressI={() => setPageI(1)} />
+      <ComponentTitleSlider texto='Lançamentos' onPressI={() => setPageI(2)} />
+      <ComponentTitleSlider texto='Acessórios'onPressI={() => setPageI(3)} />
+      <ComponentTitleSlider texto= 'Redes Sociais' onPressI={() => setPageI(4)} />
       </View>
 
     </ImageBackground>

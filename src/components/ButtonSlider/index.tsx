@@ -4,9 +4,10 @@ export interface IBslider{
     onPressI: () => void
 }
 
-export function ButtonSlider({onPressI}: IBSlider){
+export function ButtonSlider({onPressI,texto}: IBSlider){
     return( 
-        <TouchableOpacity style={styles.text} onPress={onPressI} />
-        
+        <TouchableOpacity style={styles.Text} onPress={onPressI} >
+          <Text>{texto}</Text>
+        ?</TouchableOpacity>
     )
 }
