@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, View, Text} from 'react-native';
+import { Image, View, Text, FlatList} from 'react-native';
 import { IPage} from '../../../App';
 import {
-   ComponentLisMarker, ComponentButtonSlider, ComponentTitleSlider
+   ComponentButtonSlider,ComponentListMarker,ComponentTitlleSLider
 } from '../../components';
 import { styles } from './styles';
 export function Slider2({ setPageI}: IPage){
@@ -15,28 +15,32 @@ export function Slider2({ setPageI}: IPage){
         { id: '3', text: 'Conjunto saia e cropped Mary Sea'},
     ]
     return (
-    
-            <>
-           < View style={styles.panel} />
-                        <ComponentTitleSlider  />
-                        <FlatList
-                        data={SlideTexts}
-                        renderItem={({item}) =>
-                    <ComponentListMarker key={item.id} textMarker={item.text} />
-
-    }
-    />  <View style={styles.ButtonSlider}>
-        <ComponentButtonSlider texto='Ofertas'onPressI={() => setPageI(1)} />
-        <ComponentButtonSlider texto='Lançamentos' onPressI={() => setPageI(2)} />
-        <ComponentButtonSlider texto='Acessórios'onPressI={() => setPageI(3)} />
-        <ComponentButtonSlider texto= 'Redes Sociais' onPressI={() => setPageI(4)} />
-        </View>
-
-                
-    
-            </ >
-    
-    
+        <>
+       
+        <View style={styles.panel} >
+            <ComponentButtonSlider />
+            <Image source={} style={styles.container} />   
+            <FlatList
+                data={image11Texts}
+                renderItem={({item}) =>
+            <ComponentListMarker key={item.id} textMarker={item.text} />
+}
+/>
         
-        );
-    }
+        <View style={styles.buttonSlider} >
+        <ComponentButtonSlider texto='Ofertas'onPressI={() => setPageI(1)} />
+       <ComponentButtonSlider texto='Lançamentos' onPressI={() => setPageI(2)} />
+      <ComponentButtonSlider texto='Acessórios'onPressI={() => setPageI(3)} />
+      <ComponentButtonSlider texto= 'Redes Sociais' onPressI={() => setPageI(4)} />
+      <ComponentButtonSlider texto= 'Redes Sociais' onPressI={() => setPageI(5)} />
+          
+            
+        </View>
+        </View>
+    
+
+</ >
+
+
+);
+}

@@ -8,7 +8,7 @@ export function LoginNavigation() {
   return (
     <Stack.Navigator>
         
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Login" component={SreenLogin} />
      
     </Stack.Navigator>
   );

@@ -12,4 +12,4 @@ export function ListMarker({ textMarker }: ITextMarker) {
     </View>
    )
 }
-Footer
+

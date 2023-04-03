@@ -1,10 +1,17 @@
 import React from "react";
-import {View,Text} from "react-native"
+import {View, KeyboardAvoidingView,Text,
+TextInput} from "react-native"
+import { style } from "../../components/TitleSlider/styles";
+import (styles) from "./styles"
+import { MaterialIcons } from "@expo/vector-icons";
 
 export function Login(){
     return(
-        <View>
-            <Text>Oi</Text>
-        </View>
+        <View style={style.container}>
+            <KeyboardAvoidingView>
+                <Text style={style.title} >Login</Text>
+                <View style={style.formRow}
+                </KeyboardAvoidingView>
+                </View>
     )
 }
