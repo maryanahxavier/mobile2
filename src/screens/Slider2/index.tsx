@@ -16,17 +16,19 @@ export function Slider2({ setPageI }: IPage) {
   ];
 
   return (
-    <>
+    <> 
+       <View style={styles.container}>
       <View style={styles.panel}>
+       <ComponentListMarker titleI="MARY´BOUTIQUE" />
         <ComponentButtonSlider />
-        <Image source={slider2} style={styles.container} />
+        
         <FlatList
           data={sliderTexts}
           renderItem={({ item }) =>
-            <ComponentListMarker key={item.id} textMarker={item.text} />
+            <ComponentListMarker key={item.id} textMarker={item.text} image={0} />
           }
         />
-
+          </View>
         <View style={styles.buttonSlider}>
           <ComponentButtonSlider texto='Ofertas' onPressI={() => setPageI(1)} />
           <ComponentButtonSlider texto='Lançamentos' onPressI={() => setPageI(2)} />

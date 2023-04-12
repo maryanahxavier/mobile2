@@ -1,15 +1,19 @@
-import { Text, View } from 'react-native';
-import  { Marker } from '../Marker';
-import { styles } from './styles';
+import React from 'react'
+import { Text, View, Image, ImageSourcePropType } from 'react-native'
+import { styles } from './styles'
 export interface ITextMarker {
-    textMarker: string
+    textMarker: string 
+    image: ImageSourcePropType
 }
-export function ListMarker({ textMarker }: ITextMarker) {
-   return (
-    <View style={styles.listMarker}>
-        <Marker />
-        <Text style={styles.textMarker} > {textMarker}</Text>
-    </View>
-   )
-}
+export function ListMarker({ textMarker, image }: ITextMarker ){
+    return (
+        <View style={styles.listMarker}>
+            <Image source={image} style={styles.imagem} />
+            <Text style={styles.textMarker} >{textMarker}</Text>
+    
+            
+            
+        </View>
 
+    )
+}

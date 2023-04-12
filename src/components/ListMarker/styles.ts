@@ -10,5 +10,10 @@ export const styles = StyleSheet.create({
     textMarker:{
         marginLeft: 5,
         fontSize: 20
+    
+    },
+    imagem:{
+        width:90,
+        height:90
     }
 })
