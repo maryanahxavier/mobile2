@@ -9,7 +9,7 @@ export function Slider1({ setPageI }: IPage) {
   const image2 = require ("../../assets/duda.png");
   const image3 = require ("../../assets/luana.png");
 
-  const sliderTexts= [
+  const slide1Texts= [
     { id: '1', text: 'Conjunto Mid Verão', img:image1 },
     { id: '2', text: 'de R$158,00' },
     { id: '3', text: 'por R$100,00' },
@@ -22,17 +22,26 @@ export function Slider1({ setPageI }: IPage) {
   ];
 
   return (
-    
-
-
-
-      <View style={styles.buttonSlider}>
-        <ComponentButtonSlider texto='Ofertas' onPress={() => setPageI(1)} />
-        <ComponentButtonSlider texto='Lançamentos' onPress={() => setPageI(2)} />
-        <ComponentButtonSlider texto='Acessórios' onPress={() => setPageI(3)} />
-        <ComponentButtonSlider texto='Redes Sociais' onPress={() => setPageI(4)} />
-        <ComponentButtonSlider texto='Contato' onPress={() => setPageI(5)} />
+    <>
+    <View style={styles.container}>
+      <View style={styles.panel}>
+        <ComponentTitlleSLider titleI="MARY´BOUTIQUE"   />
+        <FlatList
+          data={slide1Texts}
+          renderItem={({ item }) => (
+            <ComponentListMarker key={item.id} textMarker={item.text} image={item.img} />
+            
+          )}
+        />
       </View>
-  
+      <View style={styles.buttonSlider}>
+        <ComponentButtonSlider  onPressI={() => setPageI(1)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(2)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(3)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(4)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(5)} />
+      </View>
+      </View>
+    </>
   );
 }

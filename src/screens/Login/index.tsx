@@ -4,8 +4,9 @@ import { styles } from './style';
 import {MaterialIcons, Entypo} from '@expo/vector-icons';
 import { colors } from '../../styles/colors';
 import { ComponentButtonInterface } from "../../components";
+import { Logintypes } from '../../Navigations/login.navigation';
 
-export function Login() {
+export function Login({navigation}: Logintypes) {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
@@ -28,9 +29,12 @@ export function Login() {
                     secureTextEntry={true}
                     autoCapitalize='none'
                     style={styles.input} />
+
+
+
                 </View>
                 <ComponentButtonInterface title='Entrar' type="primary" onPressI={() =>{console.log("login")}} />
-                <ComponentButtonInterface title='Cadastrar' type="primary" onPressI={() =>{console.log("cadastrar")}} />
+                <ComponentButtonInterface title='Cadastrar' type="primary" onPressI={() =>{navigation.navigate("Cadastrar")}} />
             </KeyboardAvoidingView> 
         </View>
     )
