@@ -3,7 +3,7 @@ import { styles } from './styles'
 export interface IBInterface extends TouchableOpacityProps{
     onPressI: () => void
     title: string
-    type: 'primary' | 'secondery' 
+    type: 'primary' | 'secondary' 
 }
 
 export function ButtonInterface({onPressI,title,type,...rest}: IBInterface){

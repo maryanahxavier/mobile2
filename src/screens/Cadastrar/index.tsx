@@ -11,7 +11,7 @@ export function Cadastrar() {
             <KeyboardAvoidingView>
                 <Text style={styles.title} >Cadastrar</Text>
                 <View style={styles.formRow} >
-                <Ionicons name="person-outline" size={24} color="black" />
+                <Ionicons name="person-outline" size={24} color={colors.black} />
                     <TextInput
                     placeholder='nome'
                     placeholderTextColor={colors.black}

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../styles/colors';
+import { color, colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
     icon:{
     fontSize: 28,
-    colors: colors.primary,
+    color: colors.primary,
     padding: 5
 
     },

@@ -1,11 +1,12 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ScreenPerfil} from "../screens"
+import { SecreenPerfil,SreenCamera} from "../screens"
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { colors } from '../styles/colors';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, AntDesign} from '@expo/vector-icons';
 type TabParamList = {
   Perfil: undefined
+  Camera: undefined
 }
 type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Perfil'>
 export type TabTypes = {
@@ -24,12 +25,19 @@ export type TabTypes = {
         tabBarActiveTintColor: colors.white
       }}
     >
-      <Tab.Screen name="Perfil" component={ScreenPerfil} 
+      <Tab.Screen name="Perfil" component={SecreenPerfil} 
          options={{
            tabBarIcon: () => (
            <Ionicons name='person' color={colors.white} size={24} />
            ) 
          }}
+      />
+      <Tab.Screen name="Camera" component={SreenCamera}
+      options={{
+        tabBarIcon: () => (
+          <Ionicons name='person' color={colors.white} size={24} />
+          ) 
+        }}
       />
     </Tab.Navigator>
   )
