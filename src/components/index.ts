@@ -1,4 +1,5 @@
 export {TitleSlider as ComponentTitlleSLider} from "./TitleSlider"
 export {ButtonSlider as ComponentButtonSlider} from "./ButtonSlider"
 export {ListMarker as ComponentListMarker} from "./ListMarker"
+export {ButtonTakePicture as ComponentButtonTakePicture} from "./ButtonTakePicture"
 export {ButtonInterface as ComponentButtonInterface} from "./ButtonInterface"
