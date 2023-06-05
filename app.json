@@ -33,22 +33,26 @@
           "cameraPermission": "Permita $(PRODUCT_NAME) acessar sua câmera."
         }
       ],
-         [
-          
-            "expo-media-library",
-            {
-              "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
-              "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
-              "isAccessMediaLocationEnabled": true
-            }
-          ],
-          [
-            "expo-barcode-scanner",
-            {
-              "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
-            }
-                    ]
-        ]
-      }
-    }
-      
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ]
+    ]
+  }
+}

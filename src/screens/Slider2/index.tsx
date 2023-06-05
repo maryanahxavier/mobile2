@@ -20,7 +20,7 @@ export function Slider2({ setPageI }: IPage) {
        <View style={styles.container}>
       <View style={styles.panel}>
        <ComponentListMarker titleI="MARY´BOUTIQUE" />
-        <ComponentButtonSlider />
+        
         
         <FlatList
           data={sliderTexts}
@@ -32,6 +32,7 @@ export function Slider2({ setPageI }: IPage) {
         <View style={styles.buttonSlider}>
           <ComponentButtonSlider  onPressI={() => setPageI(1)} />
           <ComponentButtonSlider  onPressI={() => setPageI(2)} />
+          <ComponentButtonSlider  onPressI={() => setPageI(3)} />
           
         </View>
       </View>
