@@ -4,6 +4,7 @@ import {
   ScreenSlider1, ScreenSlider2,
 } from "./src/screens"
 import { Navigation } from './src/Navigations';
+import { AuthProvider } from './src/contexts/auth';
 export interface IPage {
   setPageI: Dispatch<SetStateAction<number>>
 }
@@ -16,9 +17,12 @@ export default function App() {
     case 2:
       return <ScreenSlider2 setPageI={setPage} />
       break;
-  
+      
     default:
-      return <Navigation />
-      break;
+      return (
+        <AuthProvider>
+          <Navigation />
+        </AuthProvider>
+      )
   }
 }
