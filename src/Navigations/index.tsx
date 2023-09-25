@@ -9,7 +9,6 @@ export  function Navigation() {
   const {user} = useAuth()
   return (
     <NavigationContainer>
-      <LoginNavigation/>
       {user?.token ? <TabNavigation /> : <LoginNavigation /> }
 
     </NavigationContainer>

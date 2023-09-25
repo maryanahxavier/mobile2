@@ -55,10 +55,11 @@ export function Login({navigation}: LoginTypes) {
                     <MaterialIcons name="email" style={styles.icon} />
                     <TextInput
                     placeholder='E-mail'
-                    placeholderTextColor={colors.secondary}
+                    placeholderTextColor={colors.black}
                     keyboardType="email-address"
                     autoCapitalize='none'
                     style={styles.input} 
+                    onChangeText={(i)=>handleChange({email: i})}
                     />
 
                 </View>
@@ -66,10 +67,11 @@ export function Login({navigation}: LoginTypes) {
                 <Entypo name="key" style={styles.icon}/>
                 <TextInput
                     placeholder='Senha'
-                    placeholderTextColor={colors.secondary}
+                    placeholderTextColor={colors.black}
                    secureTextEntry={true}
                     autoCapitalize='none'
                     style={styles.input} 
+                    onChangeText={(i)=>handleChange({passsword: i})}
                     />
         
 
