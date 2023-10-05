@@ -35,9 +35,9 @@ export function Slider1({ setPageI }: IPage) {
         />
       </View>
       <View style={styles.buttonSlider}>
-        <ComponentButtonSlider  onPressI={() => setPageI(1)} />
-        <ComponentButtonSlider  onPressI={() => setPageI(2)} />
         <ComponentButtonSlider  onPressI={() => setPageI(3)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(2)} />
+        <ComponentButtonSlider  onPressI={() => setPageI(1)} />
       
       </View>
       </View>
