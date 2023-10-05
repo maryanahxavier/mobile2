@@ -1,72 +1,75 @@
 import React, {
-    createContext, useCallback, useState, useEffect, ReactNode
-}from "react"; 
-import { apiUSer} from "../services/data";
-import { api } from "../services/api";
+    createContext, useCallback, useState, useEffect, ReactNode } from "react";
+import {apiUSer} from "../services/data";
+import {api} from "../services/api"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { IAuthenticate, IUserLogin } from "../services/data/User";
-import { isAfter, parseISO } from "date-fns";
+import {isAfter, parseISO} from 'date-fns';
+
 export interface IAuthContextData {
-    singIn(credentials: IAuthenticate): Promise<void>
-    singOut(): Promise<void>
+    signIn( credentails: IAuthenticate): Promise<void>
+    signOut(): Promise<void>
     user?: IUserLogin
 }
-export interface IProvider{
+export interface IProvider {
     children?: ReactNode
 }
+
 const AuthContext = createContext<IAuthContextData>({} as IAuthContextData);
-const AuthProvider = ({ children }: IProvider ) => {
-    const [auth, setAuth] = useState<IUserLogin>({} as IUserLogin);
+const AuthProvider = ({children}: IProvider) => {
+    const [auth, setAuth] = useState<IUserLogin> ({} as IUserLogin);
 
-    const singIn = useCallback(async ({ email, passsword}: IAuthenticate) => {
+
+    const signIn = useCallback(async ({ email, password}: IAuthenticate ) => {
         const response = await apiUSer.login({
-            email,
-            passsword,
-        });
+          email,
+          password,
+         });
         const user = response.data;
-        api.defaults.headers.common.Authorization = `Bearer ${user.token.token}`;
-        setAuth({...user});
+        api.defaults.headers.common.Authorization =  `Baerer ${user.token.token}`;
+        setAuth({ ...user });
         await AsyncStorage.setItem("user", JSON.stringify(user))
-    },[]);
-    const removeLocalStorage = async () => {
-        await AsyncStorage.removeItem("user");
-    };
 
-    const singOut = useCallback(async () => {
-       setAuth({} as IUserLogin);
-       removeLocalStorage();
-       delete api.defaults.headers.common.authorization;
-    }, []);
+}, []);
 
-    const loadUserStorageData = useCallback(async () => {
-        const user = await AsyncStorage.getItem("user");
-        if(user) {
-          const userParse = JSON.parse(user) as IUserLogin
-          if (isAfter(parseISO(userParse.token.expires_at), new Date())) {
-            api.defaults.headers.common.authorization = `Bearer ${userParse.token.token}`;
+const removeLocalStorage = async () => {
+    await AsyncStorage.removeItem("user");
+}
+
+const signOut = useCallback(async () => {
+    setAuth({} as IUserLogin);
+    removeLocalStorage();
+    delete api.defaults.headers.common.Authorization;
+}, []);
+
+const loadUserStorageData = useCallback(async () => {
+    const user = await AsyncStorage.getItem("user");
+    if(user){
+        const userParse = JSON.parse(user) as IUserLogin
+        if(isAfter(parseISO(userParse.token.expires_at), new Date())) {
+            api.defaults.headers.common.Authorization = `Baerer ${userParse.token.token}`;
             setAuth(userParse)
-          } else {
+        }else{
             await removeLocalStorage()
-          }
         }
-        },[]);
+    }
+} ,[])
 
-    useEffect(() => {
-        loadUserStorageData();
-    }, []);
+useEffect(() => {
+    loadUserStorageData();
+}, [])
 
-    return (
-        <AuthContext.Provider
-            value={{
-            singIn,
-            singOut,
+return(
+    <AuthContext.Provider
+        value={{
+            signIn,
+            signOut,
             user: auth
-            }}
-            >
-            {children}  
-        </AuthContext.Provider>
-
-    );
+        }}
+    >
+        {children}
+    </AuthContext.Provider>
+);
 };
 
-export { AuthProvider, AuthContext };
+export { AuthProvider, AuthContext }

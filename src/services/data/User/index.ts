@@ -7,7 +7,7 @@ export interface IRegister{
 }
 export interface IAuthenticate{
     email?: string
-    passsword?:string
+    password?:string
 }
 
 export interface IUser{
