@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
-import { ComponentButtonInterface, ComponentLoading } from "../../components";
+import { ComponentButtonInterface, ComponentLoading} from "../../components";
 import { TabTypes } from "../../Navigations/tab.navigation";
 import { styles } from "./styles";
 import * as Notification from 'expo-notifications';
